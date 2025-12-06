@@ -1,0 +1,24 @@
+[Unit]
+Description=Amazon.de Stock Checker Service
+After=network-online.target
+Wants=network-online.target
+
+[Service]
+Type=simple
+User=root
+WorkingDirectory=/root/AmazonStockChecker
+ExecStart=/root/AmazonStockChecker/venv/bin/python /root/AmazonStockChecker/amazon_checker.py -c /root/AmazonStockChecker/config.yaml
+Restart=always
+RestartSec=60
+
+# Environment
+Environment=PYTHONUNBUFFERED=1
+EnvironmentFile=-/root/AmazonStockChecker/.env
+
+# Logging
+StandardOutput=journal
+StandardError=journal
+SyslogIdentifier=amazon-checker
+
+[Install]
+WantedBy=multi-user.target

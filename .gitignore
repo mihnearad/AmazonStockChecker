@@ -1,0 +1,10 @@
+# Environment
+.env
+venv/
+
+# Python
+__pycache__/
+*.pyc
+
+# IDE
+.claude/

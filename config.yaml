@@ -1,0 +1,39 @@
+# Amazon Stock Checker Configuration
+
+# Notification settings
+# Set NTFY_URL environment variable or configure here
+notification:
+  ntfy_url: ""  # Or set NTFY_URL env var
+  notify_on_stock: true
+  notify_on_error: false
+
+# Check interval in seconds (300 = 5 minutes)
+check_interval: 300
+
+# Request settings
+request:
+  timeout: 30
+  max_retries: 3
+  retry_delay: 10
+
+# Products to monitor
+products:
+  - name: "iPhone 17 Pro 512GB Silver"
+    url: "https://www.amazon.de/dp/B0FQFMRYFD/"
+    enabled: true
+
+  - name: "iPhone 17 Pro 1TB Silver"
+    url: "https://www.amazon.de/dp/B0FQFYP8JJ/"
+    enabled: true
+
+  - name: "iPhone 17 Pro Max 512GB Silver"
+    url: "https://www.amazon.de/dp/B0FQG1YKCZ/"
+    enabled: true
+
+  - name: "iPhone 17 Pro Max 1TB Silver"
+    url: "https://www.amazon.de/dp/B0FQG8PST2/"
+    enabled: true
+
+  - name: "iPhone 17 Pro 512GB Orange"
+    url: "https://www.amazon.de/dp/B0FQFWYRTW/"
+    enabled: true  # Control product - should stay in stock
